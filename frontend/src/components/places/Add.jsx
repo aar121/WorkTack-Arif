@@ -1,5 +1,5 @@
 const React = require('react')
-const NavBar = require('../NavBar.jsx')
+//const NavBar = require('../NavBar.jsx')
 
 function AddJob () {
     return (
@@ -32,7 +32,7 @@ function AddJob () {
     <input className="form-control" 
             id="contact" 
             name="contact"
-            type= "number" required />
+             />
   </div>
   <input className="btn btn-primary" type="submit" value="Add Job" />
 </form>
