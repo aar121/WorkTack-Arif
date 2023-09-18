@@ -4,6 +4,7 @@ import NavBar from './components/NavBar.jsx';
 import About from './components/places/About.jsx';
 import More from './components/places/More.jsx';
 import AddJob from './components/places/Add.jsx';
+import './sty'
 
 function App() {
   return (
