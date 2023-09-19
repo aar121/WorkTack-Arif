@@ -13,4 +13,8 @@ router.get('/', (req, res) => {
       res.render('error404')
     })
   })
-  
+
+router.post('/',(req, res) => {
+    res.json(job)
+  })
+
