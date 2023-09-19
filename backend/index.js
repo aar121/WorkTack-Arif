@@ -1,6 +1,7 @@
 //DEPENDENCIES
 const express = require('express')
 const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
 
 //CONFIGURATION
 require('dotenv').config()
@@ -9,17 +10,25 @@ const app = express()
 
 //MIDDLEWARE
 
-//MONGOOSE CONNECT
-mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true})
-.then(res => console.log("connected at:", process.env.MONGO_URI))
-.catch(err => console.log(err))
+//Connect to MongoDB
+mongoose.connect('mongodb://localhost:27017/worktack')
+mongoose.Promise = global.Promise
 
 // ROUTES
+app.use(bodyParser.json())
+
+app.use('/jobs', require('./controllers/jobs_controller'))
+
 app.get('/', (req, res) => {
-    res.send('Welcome to WorkTack')
+  res.send('Welcome to WorkTack')
   })
 
+// ERROR HANDLING MIDDLEWARE
+app.use(function (err, req, res, next) {
+  res.status(422).send({error: err.message})
+})
+
 //LISTEN
-app.listen(PORT, () => {
+app.listen(process.env.port || 5001, () => {
     console.log('listening on port', PORT)
 })
