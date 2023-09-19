@@ -17,7 +17,7 @@ mongoose.Promise = global.Promise
 // ROUTES
 app.use(bodyParser.json())
 
-app.use('/api', require('./routes/api'))
+app.use('/jobs', require('./controllers/jobs_controller'))
 
 app.get('/', (req, res) => {
   res.send('Welcome to WorkTack')
