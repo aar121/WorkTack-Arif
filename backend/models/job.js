@@ -3,15 +3,9 @@ const Schema = mongoose.Schema
 
 //job Schema//
 const JobSchema = new Schema ({
-    business:{ 
-        type: String, 
-    },
-    title:{ 
-        type: String
-    },
-    description:{ 
-        type: String,
-    },
+    business: String, 
+    title: String,
+    description: String,
     isAvailable:{
         type: Boolean,
         default: true 

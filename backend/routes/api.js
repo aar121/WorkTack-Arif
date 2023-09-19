@@ -29,7 +29,7 @@ router.post('/jobs', function (req, res, next) {
 router.put('/jobs/:id', function (req, res, next) {
     Job.findByIdAndUpdate({_id: req.params.id}, req.body)
         .then(function () {
-            Job.findOne({_id: req.params.id}).then(function () {
+            Job.findOne({_id: req.params.id}).then(function (job) {
                 res.send(job)
             })
         }).catch(next)
