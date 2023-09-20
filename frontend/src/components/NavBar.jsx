@@ -5,9 +5,6 @@ function NavBar() {
 
     return(
         <>
-        <div>
-             <h1>WorkTack</h1>
-        </div>
                 <nav className="navbar">
                         <Link to="/">Home</Link>
                         <Link to="/addjobs">Add Job</Link>
