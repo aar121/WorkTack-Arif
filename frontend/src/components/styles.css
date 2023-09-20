@@ -1,5 +1,32 @@
 .navbar{
-    background-color: #778DA9;
-    color: white;
-    
+    background-color: white;
+    color: #415A77;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    font-family: Verdana;
+    font-size: large;
 }
+
+.nav-link{
+    color: #415A77;
+}
+
+.h1 {
+    font-size: 60px;
+    font-family: Verdana ;
+    color: #31537e;
+    text-shadow: 0 0 10px #e8eaed, 0 0 20px #ffffff, 0 0 30px #dbe0e6;
+    animation: flicker 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes flicker {
+    0%, 100% {
+      opacity: 1;
+    }
+    25%, 75% {
+      opacity: 0.8;
+    }
+  }
+  
+  

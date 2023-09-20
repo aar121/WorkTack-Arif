@@ -1,11 +1,18 @@
 import './home.css'
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 const React = require('react')
 const bulletin = {
     width: '90%',
     height: '60vh'
 }
+
+const cardColors = ['#ffbd00', '#ff7900', '#ff0054', '#9e0059', '#7371fc', '#F94144','#43AA8B']
+
+function getRandomColor() {
+    const randomIndex = Math.floor(Math.random() * cardColors.length);
+    return cardColors[randomIndex];
+  }
 
 function getRandomPosition()
  {
@@ -28,7 +35,8 @@ function JobCard() {
         width: '12rem',
         height: '10rem',
         position: 'relative',
-        ...getRandomPosition()
+        ...getRandomPosition(),
+        backgroundColor: getRandomColor(),
     }
   return (
     <Card className="card" style={cardStyle}>
@@ -51,14 +59,15 @@ function Home () {
       
             <main className='home'>
                
-                <h1>Work Tack</h1>
+                <h1 className='h1'>Work Tack</h1>
                 <div className="board">
-                <JobCard></JobCard>
-                <JobCard></JobCard>
-                <JobCard></JobCard>
-                <JobCard></JobCard>
-                <JobCard></JobCard>
-                <JobCard></JobCard>
+                <JobCard ></JobCard>
+                <JobCard ></JobCard>
+                <JobCard ></JobCard>
+                <JobCard ></JobCard>
+                <JobCard ></JobCard>
+                <JobCard ></JobCard>
+                <JobCard ></JobCard>
                 </div>
         
             </main>

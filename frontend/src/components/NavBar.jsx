@@ -6,10 +6,10 @@ function NavBar() {
     return(
         <>
                 <nav className="navbar">
-                        <Link to="/">Home</Link>
-                        <Link to="/addjobs">Add Job</Link>
-                        <Link to="/morejobs">More Jobs</Link>
-                        <Link to="/aboutus">About Us</Link>
+                        <Link className="nav-link" to="/">Home</Link>
+                        <Link className="nav-link" to="/addjobs">Add Job</Link>
+                        <Link className="nav-link" to="/morejobs">More Jobs</Link>
+                        <Link className="nav-link" to="/aboutus">About Us</Link>
         
                 </nav>
         </>
