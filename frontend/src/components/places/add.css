@@ -1,0 +1,10 @@
+body{
+    background-color:#1B263B
+ }
+
+ .form-container{
+    border: 2px solid white;
+    padding: 20px;
+    border-radius: 10px;
+    color:white;
+ }

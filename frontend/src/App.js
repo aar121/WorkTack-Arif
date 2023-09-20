@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import Home from './components/Home';
 import NavBar from './components/NavBar.jsx';
 import About from './components/places/About.jsx';
@@ -8,6 +8,7 @@ import Edit from './components/places/Edit.jsx';
 
 
 function App() {
+  let {userId} = useParams();
   return (
   <BrowserRouter>
   <NavBar />
