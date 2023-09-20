@@ -65,7 +65,7 @@ function AddJob() {
       </Row>
 
 
-      <Button variant="primary" type="submit">
+      <Button className='submit' variant="primary" type="submit">
         Submit
       </Button>
     </Form>
