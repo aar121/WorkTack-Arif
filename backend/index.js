@@ -1,5 +1,6 @@
 //DEPENDENCIES
 const express = require('express')
+const cors = require('cors')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 
@@ -8,20 +9,20 @@ require('dotenv').config()
 const PORT = process.env.PORT
 const app = express()
 
-//MIDDLEWARE
-
 //Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/worktack')
 mongoose.Promise = global.Promise
 
-// ROUTES
+//ROOT Index
+app.get('/', (req, res) => {
+  res.send('Welcome to WorkTack')
+  })
+
+//Jobs   
 app.use(bodyParser.json())
 
 app.use('/jobs', require('./controllers/jobs_controller'))
 
-app.get('/', (req, res) => {
-  res.send('Welcome to WorkTack')
-  })
 
 // ERROR HANDLING MIDDLEWARE
 app.use(function (err, req, res, next) {
@@ -29,6 +30,6 @@ app.use(function (err, req, res, next) {
 })
 
 //LISTEN
-app.listen(process.env.port || 5001, () => {
+app.listen(process.env.port || 5000, () => {
     console.log('listening on port', PORT)
 })

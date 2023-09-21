@@ -2,7 +2,14 @@ const express = require ('express')
 const router = express.Router()
 const Job = require('../models/job')
 
-//get all jobs
+// INDEX
+router.get('/', function (req, res, next) {
+    Job.find( {}).then(function (jobs) {
+        res.status(200).json(jobs)
+    }).catch(next)
+})
+
+//Show all jobs
 router.get('/', function (req, res, next) {
     Job.find( {}).then(function (jobs) {
         res.send(jobs)
