@@ -1,0 +1,21 @@
+body{
+    background-color:#3f5174;
+    color: white;
+ }
+
+ .form-container{
+    border: 2px solid   rgb(66, 188, 66);;
+    padding: 20px;
+    border-width:10px;
+    border-style:ridge;
+    color:white;
+ }
+
+ .form{
+   font-family: verdana;
+   font-size: medium;
+}
+
+.submit{
+   background-color: rgb(58, 146, 58);
+}
