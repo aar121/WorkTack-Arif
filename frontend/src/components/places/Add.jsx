@@ -8,6 +8,28 @@ import Row from 'react-bootstrap/Row';
 import './add.css'
 function AddJob() {
   
+  const navigate = useNavigate();
+
+  const [job, setJob] = useState({
+    name: "",
+    title: "",
+    location: "",
+    contact: "",
+  });
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+
+    await fetch('http://localhost:5000/jobs', {
+      method: 'POST', 
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(job)
+
+    })
+    navigate.push('/jobs')
+  }
   const states = [
     'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut',
     'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa',
