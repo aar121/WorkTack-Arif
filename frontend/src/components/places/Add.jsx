@@ -1,16 +1,17 @@
-// import {useState} from "react"
-// import {useHistory} from "react-router"
-
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import './add.css'
+import  {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
+const React = require("react");
+
 function AddJob() {
   
   const navigate = useNavigate();
 
-  const [job, setJob] = useState({
+  const job = useState({
     name: "",
     title: "",
     location: "",
@@ -41,7 +42,7 @@ function AddJob() {
   ];
   return (
     <div className='form-container'>
-    <Form >
+    <Form onSubmit={handleSubmit}>
       <Row className="form">
         <Form.Group as={Col} controlId="formBusinessName">
           <Form.Label>Business Name</Form.Label>
@@ -96,69 +97,3 @@ function AddJob() {
 }
 
 export default AddJob;
-
-// const React = require('react')
-// //const NavBar = require('../NavBar.jsx')
-
-// function AddJob () {
-
-//     // const history = useHistory()
-
-//     // const [place, setPlace] = useState({
-//     //   name: '',
-//     //   title: '',
-//     //   location: '',
-//     //   contact: '',
-//     // })
-
-//     // async function handleSubmit(e) {
-//     //   e.preventDefault()
-
-//     //     await fetch (``, {
-//     //       method: 'POST',
-//     //       headers: {
-//     //           'Content-Type': 'application/json'
-//     //       },
-//     //       body: JSON.stringify(place)
-//     //     })
-
-//     //     history.push(`/places`)
-//     // }
-//     return (
-//           <main>
-//             <h1>Add a Job Listing</h1>
-//             <form method="POST" action="/places">
-//   <div className="form-group">
-//     <label htmlFor="name">Business Name</label>
-//     <input className="form-control" 
-//             id="name"
-//             name="name"
-//             type= "text" required />
-//   </div>
-//   <div className="form-group">
-//     <label htmlFor="title">Job Title</label>
-//     <input className="form-control"
-//            id="title" 
-//            name="title"
-//            type="text" required />
-//   </div>
-//   <div className="form-group">
-//     <label htmlFor="location">Location</label>
-//     <input className="form-control"
-//            id="location" 
-//            name="location" required />
-//   </div>
-//   <div className="form-group">
-//     <label htmlFor="contact">Contact Info</label>
-//     <input className="form-control" 
-//             id="contact" 
-//             name="contact"
-//              />
-//   </div>
-//   <input className="btn btn-primary" type="submit" value="Add Job" />
-// </form>
-//           </main>
-//     )
-// }
-
-//export default AddJob;

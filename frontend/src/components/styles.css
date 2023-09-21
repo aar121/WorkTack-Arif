@@ -15,9 +15,7 @@
 .h1 {
     font-size: 60px;
     font-family: Verdana ;
-    color: #31537e;
-    text-shadow: 0 0 10px #e8eaed, 0 0 20px #ffffff, 0 0 30px #dbe0e6;
-    animation: flicker 1s ease-in-out infinite alternate;
+    color: #90a8c6;
   }
   
   @keyframes flicker {

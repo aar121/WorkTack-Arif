@@ -1,6 +1,5 @@
 import './home.css'
 import Card from 'react-bootstrap/Card';
-// import Button from 'react-bootstrap/Button';
 const React = require('react')
 const bulletin = {
     width: '90%',
@@ -40,14 +39,12 @@ function JobCard() {
     }
   return (
     <Card className="card" style={cardStyle}>
-      {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
       <Card.Body>
         <Card.Title>Now Hiring!</Card.Title>
         <Card.Text>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
         sed do eiusmod aliqua.
         </Card.Text>
-        {/* <Button variant="primary">More</Button> */}
       </Card.Body>
     </Card>
   );
