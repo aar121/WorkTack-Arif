@@ -8,7 +8,7 @@ const bodyParser = require('body-parser')
 require('dotenv').config()
 const PORT = process.env.PORT
 const app = express()
-
+app.use(cors())
 //Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/worktack')
 mongoose.Promise = global.Promise
@@ -30,6 +30,6 @@ app.use(function (err, req, res, next) {
 })
 
 //LISTEN
-app.listen(process.env.port || 5000, () => {
+app.listen(process.env.PORT || 5003, () => {
     console.log('listening on port', PORT)
 })
