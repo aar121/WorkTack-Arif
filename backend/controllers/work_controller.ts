@@ -1,32 +1,35 @@
-const express = require("express");
-const router = require("express").Router();
-require("dotenv").config();
-const db = require('../models');
-const Job = require("../models/data");
+import express, { Request, Response } from "express";
+import { Router } from "express";
+import dotenv from "dotenv";
+import db from '../models/data';
+import Job  from "../models/data";
 
-router.get('/', (req, res) => {
+dotenv.config();
+const router: Router = express.Router();
+
+router.get('/', (req: Request, res: Response) => {
     db.Job.find()
-    .then((job) => {
+    .then((job: Job[]) => {
       res.render('places/more', { job })
     })
-    .catch(err => {
+    .catch((err: any) => {
       console.log(err)
       res.render('error404')
     })
     console.log('test')
   })
 
-router.post('/', async (req, res) => {
+router.post('/', async (req: { body: any; }, res: { json: (arg0: any) => void; }) => {
   const post = await Job.create(req.body)  
   res.json(post)
   })
 
-router.delete('/:jobId', async (req, res) => {
+router.delete('/:jobId', async (req: { params: { jobId: any; }; }, res: { status: (arg0: number) => { (): any; new(): any; json: { (arg0: { message: string; }): void; new(): any; }; }; json: (arg0: any) => void; }) => {
   let jobId = Number(req.params.jobId)
   if (isNaN(jobId)) {
     res.status(404).json({ message: 'The job id you have requested is invalid'})
   } else {
-    const remove = await job.findOne({
+    const remove = await Job.findOne({
       where: { jobId: jobId }
     })
     if (!remove) {
@@ -38,7 +41,7 @@ router.delete('/:jobId', async (req, res) => {
   }
 })
 
-router.put('/:jobId', async (req, res) => {
+router.put('/:jobId', async (req: { params: { jobId: any; }; body: any; }, res: { status: (arg0: number) => { (): any; new(): any; json: { (arg0: { message: string; }): void; new(): any; }; }; json: (arg0: any) => void; }) => {
   let jobId = Number(req.params.jobId)
   if (isNaN(jobId)) {
     res.status(404).json({ message: 'The job id you have requested is invalid'})

@@ -14,7 +14,7 @@ mongoose.connect('mongodb://localhost:27017/worktack')
 mongoose.Promise = global.Promise
 
 //ROOT Index
-app.get('/', (req, res) => {
+app.get('/', (req: Request, res: Response) => {
   res.send('Welcome to WorkTack')
   })
 
@@ -25,7 +25,7 @@ app.use('/jobs', require('./controllers/jobs_controller'))
 
 
 // ERROR HANDLING MIDDLEWARE
-app.use(function (err, req, res, next) {
+app.use(function (err: Error, req: Request, res: Response) {
   res.status(422).send({error: err.message})
 })
 
